@@ -21,6 +21,13 @@ export default function ProposalPage({ params }: ProposalPageProps) {
   const [loading, setLoading] = useState(true);
   const [signingName, setSigningName] = useState('');
   const [isSigning, setIsSigning] = useState(false);
+  const [shareUrl, setShareUrl] = useState(`https://builtbyanirudh.vercel.app/proposal/${resolvedParams.id}`);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setShareUrl(`${window.location.origin}/proposal/${resolvedParams.id}`);
+    }
+  }, [resolvedParams.id]);
 
   useEffect(() => {
     async function loadData() {
@@ -127,13 +134,12 @@ export default function ProposalPage({ params }: ProposalPageProps) {
   };
 
   // Pre-compiled message variables in Rs.
-  const urlLink = `builtbyanirudh/proposal/${quotation.id}`;
   const whatsappMsg = encodeURIComponent(
-    `Hi, here is the website design & development proposal for ${quotation.business_name}.\nEstimated cost: Rs. ${quotation.estimated_cost_min.toLocaleString()} - Rs. ${quotation.estimated_cost_max.toLocaleString()}\nEstimated timeline: ~${(quotation.estimated_days / 20).toFixed(1)} Months.\nView details here: ${urlLink}`
+    `Hi, here is the website design & development proposal for ${quotation?.business_name || ''}.\nEstimated cost: Rs. ${quotation?.estimated_cost_min?.toLocaleString() || '0'} - Rs. ${quotation?.estimated_cost_max?.toLocaleString() || '0'}\nEstimated timeline: ~${((quotation?.estimated_days || 20) / 20).toFixed(1)} Months.\nView details here: ${shareUrl}`
   );
-  const emailSubject = encodeURIComponent(`Website Scoping Proposal - ${quotation.business_name}`);
+  const emailSubject = encodeURIComponent(`Website Scoping Proposal - ${quotation?.business_name || ''}`);
   const emailBody = encodeURIComponent(
-    `Hi,\n\nI have generated the website requirement specification and development proposal for ${quotation.business_name}.\n\nEstimated Cost: Rs. ${quotation.estimated_cost_min.toLocaleString()} - Rs. ${quotation.estimated_cost_max.toLocaleString()}\nEstimated Timeline: ~${(quotation.estimated_days / 20).toFixed(1)} Months (${quotation.estimated_days} working days).\nComplexity Tier: ${quotation.complexity.toUpperCase()}\n\nYou can review the complete roadmap, selected features checklist, terms and sign the proposal digitally at this private link:\nhttps://${urlLink}\n\nBest regards,\nAnirudh Pratap\nbuiltbyanirudh@proton.me`
+    `Hi,\n\nI have generated the website requirement specification and development proposal for ${quotation?.business_name || ''}.\n\nEstimated Cost: Rs. ${quotation?.estimated_cost_min?.toLocaleString() || '0'} - Rs. ${quotation?.estimated_cost_max?.toLocaleString() || '0'}\nEstimated Timeline: ~${((quotation?.estimated_days || 20) / 20).toFixed(1)} Months (${quotation?.estimated_days || 20} working days).\nComplexity Tier: ${quotation?.complexity?.toUpperCase() || 'MEDIUM'}\n\nYou can review the complete roadmap, selected features checklist, terms and sign the proposal digitally at this private link:\n${shareUrl}\n\nBest regards,\nAnirudh Pratap\nbuiltbyanirudh@proton.me`
   );
 
   return (
