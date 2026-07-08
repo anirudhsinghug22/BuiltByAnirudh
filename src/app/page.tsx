@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navbar } from '@/components/Navbar';
 import { 
-  Sparkles, ShieldCheck, Landmark, Clock, FileText, ArrowRight,
+  ShieldCheck, Landmark, Clock, FileText, ArrowRight,
   Play, ChevronDown, Check, HelpCircle, KanbanSquare, Network
 } from 'lucide-react';
 
@@ -113,7 +113,6 @@ export default function LandingPage() {
             {/* Hero Left Content */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#E3D7C5] dark:border-slate-800 bg-[#FFFFFF]/60 dark:bg-slate-900/40 text-xs font-bold text-[#009966]">
-                <Sparkles className="w-3.5 h-3.5 animate-pulse-slow" />
                 SaaS proposal sales dashboard
               </div>
 

@@ -10,7 +10,7 @@ import { FEATURES, CATEGORIES_LABELS } from '@/lib/pricing-data';
 import { calculateEstimate, getMissingDependencies } from '@/lib/pricing';
 import { saveQuotation } from '@/lib/supabase';
 import { 
-  ArrowLeft, ArrowRight, RotateCcw, RotateCw, RefreshCw, Sparkles, Check,
+  ArrowLeft, ArrowRight, RotateCcw, RotateCw, RefreshCw, Check,
   Plus, Trash2, Calendar, FileText, CheckCircle, Info, AlertCircle
 } from 'lucide-react';
 
@@ -423,7 +423,6 @@ export default function BuilderPage() {
                     </>
                   ) : (
                     <>
-                      <Sparkles className="w-4 h-4" />
                       Generate Proposal
                     </>
                   )}
