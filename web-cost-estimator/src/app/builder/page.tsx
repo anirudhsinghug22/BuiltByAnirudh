@@ -284,17 +284,6 @@ export default function BuilderPage() {
                         />
                       </div>
                     </div>
-
-                    <div className="space-y-1">
-                      <label className="text-xs font-bold text-slate-800 dark:text-slate-300">Reference Websites</label>
-                      <input
-                        type="text"
-                        placeholder="Add links to any websites you like or would like us to use as inspiration for your project"
-                        value={businessInfo.competitorWebsites}
-                        onChange={(e) => setBusinessInfo({ ...businessInfo, competitorWebsites: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-350 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 text-sm text-slate-900 dark:text-white font-medium focus:outline-none focus:ring-2 focus:ring-[#D4683C]/20 focus:border-[#D4683C]"
-                      />
-                    </div>
                   </div>
                 )}
 

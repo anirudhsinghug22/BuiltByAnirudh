@@ -629,12 +629,6 @@ export default function DashboardPage() {
                   <strong className="text-slate-900 dark:text-white">Business Description:</strong>
                   <p className="italic text-[11px] mt-0.5 font-medium">"{selectedLead.business_description || 'No direct summary supplied.'}"</p>
                 </div>
-                {selectedLead.competitor_websites && (
-                  <div>
-                    <strong className="text-slate-900 dark:text-white">Reference Websites:</strong>
-                    <p className="text-[11px] mt-0.5 font-bold text-[#009966]">{selectedLead.competitor_websites}</p>
-                  </div>
-                )}
                 <div>
                   <strong className="text-slate-900 dark:text-white">Selected Options:</strong>
                   <span className="block mt-1 font-bold text-[10px] text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-950/60 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 max-h-24 overflow-y-auto">
