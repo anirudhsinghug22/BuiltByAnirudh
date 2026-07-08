@@ -57,10 +57,9 @@ body {
   background-size: 50px 50px;
 }
 
-/* Stylish Base64 Custom Cursors on Hover (Recursive to children to fix text-only hover issue) */
-a, button, select, input[type="range"], input[type="submit"], [role="button"], .cursor-pointer,
-a *, button *, select *, input[type="range"] *, [role="button"] *, .cursor-pointer * {
-  cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSczMicgaGVpZ2h0PSczMicgdmlld0JveD0nMCAwIDMyIDMyJyBmaWxsPSdub25lJz48Y2lyY2xlIGN4PScxNicgY3k9JzE2JyByPSc2JyBzdHJva2U9JyNENDY4M0MnIHN0cm9rZS13aWR0aD0nMicvPjxjaXJjbGUgY3g9JzE2JyBjeT0nMTYnIHI9JzInIGZpbGw9JyNENDY4M0MnLz48L3N2Zz4=") 16 16, pointer !important;
+/* Restore standard browser pointers for clickable elements */
+a, button, select, input[type="range"], input[type="submit"], [role="button"], .cursor-pointer {
+  cursor: pointer;
 }
 
 /* Legible typography overrides to fix light mode text visibility issues */
